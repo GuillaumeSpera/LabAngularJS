@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Starter MEAN Single Page Application</title>
+
+    <script src="/js/thirdParty/angular-1.3.0.js"></script>
+    <script src="/js/app/app.js"></script>
+    <script src="/js/app/controllers/controllerModule.js"></script>
+    <script src="/js/app/controllers/dashboardController.js"></script>
+    <script src="/js/app/controllers/todoController.js"></script>
+
+</head>
+<body data-ng-app="todo.app">
+    <div data-ng-controller="dashboardController as dashboard">
+        <h1 data-ng-bind="dashboard.title"></h1>
+        <div>
+            Hello {{ dashboard.userName }} !
+        </div>
+        <div data-ng-controller="todoController as todoCtrl">
+            <h2>My Todos</h2>
+            <ul>
+                <li data-ng-repeat="todo in todoCtrl.todoList">{{ '#' + todo.id + ': ' + todo.description}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
