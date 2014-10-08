@@ -38,8 +38,5 @@
                     break;
             }
         };
-		
-		$scope.oldTodo = $filter('filter')($scope.todoList, function(item) {return item.id > 6;});
-		console.log($scope.oldTodo);
     });
 })();
