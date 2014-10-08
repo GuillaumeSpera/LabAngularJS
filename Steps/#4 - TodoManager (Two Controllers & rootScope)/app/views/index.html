@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>TodoManager SPA Angular</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body data-ng-app="todo.app">
+    <div data-ng-controller="dashboardController">
+        <h1 data-ng-bind="title"></h1>
+
+        <div>
+            <span>Hello {{ userName }} !</span>
+        </div>
+        <div>
+            <span>Hello {{ scopeUserName }} !</span>
+        </div>
+        <div id="todo-container" data-ng-controller="todoController">
+            <h2>My Todos</h2>
+            <ul>
+                <li data-ng-repeat="todo in todoList">{{ '#' + todo.id + ': ' + todo.description}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/js/thirdParty/angular-1.3.0.js"></script>
+    <script src="/js/app/app.js"></script>
+    <script src="/js/app/controllers/controllerModule.js"></script>
+    <script src="/js/app/controllers/dashboardController.js"></script>
+    <script src="/js/app/controllers/todoController.js"></script>
+</body>
+</html>
