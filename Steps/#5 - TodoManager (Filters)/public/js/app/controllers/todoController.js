@@ -3,24 +3,29 @@
 
     var controllers = angular.module('todo.controllers');
 
-    controllers.controller('todoController', function ($rootScope, $scope) {
+    controllers.controller('TodoController', function ($rootScope, $scope, $filter, $log, todoPriority) {
         $scope.todoList = [];
-        $scope.todoPriority = {
-            low: 1,
-            medium: 2,
-            high: 3
-        };
+        $scope.todoPriority = todoPriority;
         $scope.priorityFilter = {};
         $scope.sortOrder = 'id';
         $scope.getPriorityName = getPriorityName;
 
-        for (var i = 1; i < 11; i++) {
-            $scope.todoList.push({
-                id: i,
-                description: 'Todo ' + i,
-                priority: $scope.todoPriority.high
+        getTodos();
+
+        function getTodos() {
+            for (var i = 1; i < 11; i++) {
+                $scope.todoList.push({
+                    id: i,
+                    title: 'Todo ' + i,
+                    priority: $scope.todoPriority.high
+                });
+            }
+
+            var oldTodo = $filter('filter')($scope.todoList, function (item) {
+                return item.id > 6;
             });
-        }
+            $log.log(JSON.stringify(oldTodo));
+        };
 
         function getPriorityName() {
             switch ($scope.priorityFilter.priority) {
@@ -38,8 +43,5 @@
                     break;
             }
         };
-		
-		$scope.oldTodo = $filter('filter')($scope.todoList, function(item) {return item.id > 6;});
-		console.log($scope.oldTodo);
     });
 })();

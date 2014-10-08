@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body data-ng-app="todo.app">
-    <div data-ng-controller="dashboardController">
+    <div data-ng-controller="DashboardController">
         <h1 data-ng-bind="title"></h1>
 
         <div>
@@ -16,10 +16,10 @@
         <div>
             <span>Hello {{ scopeUserName }} !</span>
         </div>
-        <div id="todo-container" data-ng-controller="todoController">
+        <div id="todo-container" data-ng-controller="TodoController">
             <h2>My Todos</h2>
             <ul>
-                <li data-ng-repeat="todo in todoList">{{ '#' + todo.id + ': ' + todo.description}}</li>
+                <li data-ng-repeat="todo in todoList">{{ '#' + todo.id + ': ' + todo.title}}</li>
             </ul>
         </div>
     </div>
