@@ -1,0 +1,19 @@
+<div id="todo-container">
+    <div>
+        <h1>My Todos</h1>
+    </div>
+    <div id="filter-container">
+        <h3>Filters ({{ getPriorityName() }})</h3>
+        <button data-ng-click="priorityFilter = { priority: todoPriority.high }">High priority</button>
+        <button data-ng-click="priorityFilter = { priority: todoPriority.medium }">Medium priority</button>
+        <button data-ng-click="priorityFilter = { priority: todoPriority.low }">Low priority</button>
+    </div>
+    <div id="sort-container">
+        <h3>Sorts ({{ sortOrder === 'id' ? 'Ascending' : 'Descending' }})</h3>
+        <button data-ng-click="sortOrder = 'id'">Ascending</button>
+        <button data-ng-click="sortOrder = '-id'">Descending</button>
+    </div>
+    <ul>
+        <li data-ng-repeat="todo in todoList | filter: priorityFilter | orderBy: sortOrder">{{ '#' + todo.id + ': ' + todo.title}}</li>
+    </ul>
+</div>

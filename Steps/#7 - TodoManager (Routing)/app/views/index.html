@@ -5,40 +5,24 @@
     <title>TodoManager SPA Angular</title>
 
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <base href="/"/>
 </head>
 <body data-ng-app="todo.app">
-    <div data-ng-controller="DashboardController">
-        <h1 data-ng-bind="title"></h1>
-
-        <div>
-            <span>Hello {{ userName }} @rootScope!</span>
-        </div>
-        <div>
-            <span>Hello {{ scopeUserName }} @scope!</span>
-        </div>
-
-        <div id="todo-container" data-ng-controller="TodoController">
-            <h2>My Todos</h2>
-            <div id="filter-container">
-                <h3>Filters ({{ getPriorityName() }})</h3>
-                <button data-ng-click="priorityFilter = { priority: todoPriority.high }">High priority</button>
-                <button data-ng-click="priorityFilter = { priority: todoPriority.medium }">Medium priority</button>
-                <button data-ng-click="priorityFilter = { priority: todoPriority.low }">Low priority</button>
-            </div>
-            <div id="sort-container">
-                <h3>Sorts ({{ sortOrder === 'id' ? 'Ascending' : 'Descending' }})</h3>
-                <button data-ng-click="sortOrder = 'id'">Ascending</button>
-                <button data-ng-click="sortOrder = '-id'">Descending</button>
-            </div>
-            <ul>
-                <li data-ng-repeat="todo in todoList | filter: priorityFilter | orderBy: sortOrder">{{ '#' + todo.id + ': ' + todo.title}}</li>
-            </ul>
-        </div>
+    <div id="menu">
+        <a class="menu-tab" data-ui-sref="dashboard">
+            Dashboard
+        </a>
+        <a class="menu-tab" data-ui-sref="todo">
+            Todos
+        </a>
     </div>
+    <div id="app-container" data-ui-view></div>
 
     <script src="/js/thirdParty/angular-1.3.0.js"></script>
+    <script src="/js/thirdParty/angular-ui-router.js"></script>
     <script src="/js/app/app.js"></script>
     <script src="/js/app/config/app.config.js"></script>
+    <script src="/js/app/config/app.location.js"></script>
     <script src="/js/app/controllers/controllerModule.js"></script>
     <script src="/js/app/controllers/dashboardController.js"></script>
     <script src="/js/app/controllers/todoController.js"></script>

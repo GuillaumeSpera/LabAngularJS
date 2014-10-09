@@ -5,4 +5,3 @@ module.exports = function (app) {
         res.sendFile(__dirname + '/views/index.html');
     });
 };
-

@@ -14,9 +14,8 @@
         $log.log('Application started...');
 
         $rootScope.user = {
-            LastName: 'Billon',
-            FirstName: 'Felix',
-            Surname: 'Flexi'
+            LastName: 'Lab',
+            FirstName: 'DCube'
         };
     };
 })();
