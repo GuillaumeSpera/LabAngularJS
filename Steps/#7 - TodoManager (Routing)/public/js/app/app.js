@@ -6,28 +6,28 @@
     app.config(appConfig);
     app.run(appRun);
 
-    function appConfig($locationProvider, $stateProvider, $urlRouterProvider, appLocationProvider) {
+    function appConfig($locationProvider, $stateProvider, $urlRouterProvider) {
         console.log('Configuring application...');
 
-        $urlRouterProvider.otherwise(appLocationProvider.resolveUrl('/404'));
+        $urlRouterProvider.otherwise('/404');
 
         $stateProvider
             .state({
                 name: 'dashboard',
-                url: appLocationProvider.resolveUrl('/'),
-                templateUrl: appLocationProvider.resolveUrl('/views/dashboard.html'),
+                url: '/',
+                templateUrl: '/views/dashboard.html',
                 controller: 'DashboardController'
             })
             .state({
                 name: 'todo',
-                url: appLocationProvider.resolveUrl('/todo'),
-                templateUrl: appLocationProvider.resolveUrl('/views/todo.html'),
+                url: '/todo',
+                templateUrl: '/views/todo.html',
                 controller: 'TodoController'
             })
             .state({
                 name: '404',
-                url: appLocationProvider.resolveUrl('/404'),
-                templateUrl: appLocationProvider.resolveUrl('/views/404.html')
+                url: '/404',
+                templateUrl: '/views/404.html'
             });
 
         $locationProvider.html5Mode(true);
