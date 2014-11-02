@@ -10,7 +10,7 @@
         console.log('Configuring application...');
     };
 
-    function appRun($log) {
-        $log.log('Application started...');
+    function appRun() {
+        console.log('Application started...');
     };
 })();

@@ -33,8 +33,8 @@
         $locationProvider.html5Mode(true);
     };
 
-    function appRun($log, $rootScope) {
-        $log.log('Application started...');
+    function appRun($rootScope) {
+        console.log('Application started...');
 
         $rootScope.user = {
             LastName: 'Lab',

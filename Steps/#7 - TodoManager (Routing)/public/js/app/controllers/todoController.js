@@ -3,7 +3,7 @@
 
     var controllers = angular.module('todo.controllers');
 
-    controllers.controller('TodoController', function ($rootScope, $scope, $log, todoPriority, Todos) {
+    controllers.controller('TodoController', function ($rootScope, $scope, todoPriority, Todos) {
         $scope.todoList = [];
         $scope.todoPriority = todoPriority;
         $scope.priorityFilter = {};
