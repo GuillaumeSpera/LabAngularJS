@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('todo.app', ['ui.router', 'todo.config', 'todo.controllers', 'todo.services']);
+    var app = angular.module('todo.app', ['ui.router', 'todo.controllers']);
 
     app.config(appConfig);
     app.run(appRun);

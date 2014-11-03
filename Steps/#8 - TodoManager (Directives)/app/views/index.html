@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>TodoManager SPA Angular</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <base href="/"/>
+</head>
+<body data-ng-app="todo.app">
+    <div id="menu">
+        <a class="menu-tab" data-ui-sref="dashboard">
+            Dashboard
+        </a>
+        <a class="menu-tab" data-ui-sref="todo">
+            Todos
+        </a>
+    </div>
+    <div id="app-container" data-ui-view></div>
+
+    <script src="/js/thirdParty/angular-1.3.0.js"></script>
+    <script src="/js/thirdParty/angular-ui-router.js"></script>
+    <script src="/js/app/app.js"></script>
+    <script src="/js/app/config/app.config.js"></script>
+    <script src="/js/app/controllers/controllerModule.js"></script>
+    <script src="/js/app/controllers/dashboardController.js"></script>
+    <script src="/js/app/controllers/todoController.js"></script>
+    <script src="/js/app/services/serviceModule.js"></script>
+    <script src="/js/app/services/todoService.js"></script>
+    <script src="/js/app/directives/directiveModule.js"></script>
+    <script src="/js/app/directives/todoPanel.js"></script>
+
+</body>
+</html>

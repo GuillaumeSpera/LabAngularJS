@@ -1,0 +1,68 @@
+body {
+    background-color: #427C9C;
+}
+
+#menu {
+    margin-left: 100px;
+}
+
+#menu .menu-tab {
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #0084A5;
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    font-weight: bold;
+    border-bottom: 1px rgb(0, 147, 184) solid;
+}
+
+#app-container {
+    background-color: white;
+    border-radius: 20px;
+    padding-left: 30px;
+    color: #3D4D58;
+}
+
+#app-container button {
+    color: #0084A5;
+    font-weight: bold;
+}
+
+#dashbord-container {
+    padding: 10px 10px 30px 40px;
+}
+
+#todo-container {
+    padding: 10px;
+}
+
+#todo-container h1 {
+    margin-left: 30px;
+}
+
+#todo-container #filter-container,
+#todo-container #sort-container {
+    display: inline-block;
+    padding: 10px;
+    border: solid #b3b3b3 1px;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    color: #0084A5;
+}
+
+#todo-container #filter-container h3 {
+    text-align: center;
+}
+
+#todo-container #sort-container h3 {
+    text-align: center;
+}
+
+#error-container {
+    padding: 10px 10px 10px 40px;
+}
