@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('todo.directives', ['todo.services']);
+    angular.module('todo.directives', ['todo.config', 'todo.services']);
 
 })();

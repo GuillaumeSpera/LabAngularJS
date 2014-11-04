@@ -1,3 +1,8 @@
 <li>
-    <span>{{ '#' + model.id + ': ' + model.title}}</span><span ng-click="deleteTodo()" style="margin-left: 20px;">Supprimer</span>
+    <span class="todo-id" ng-bind="model.id"></span>
+    <span ng-if="model.priority === todoPriority.low" class="todo-priority">L</span>
+    <span ng-if="model.priority === todoPriority.medium" class="todo-priority">M</span>
+    <span ng-if="model.priority === todoPriority.high" class="todo-priority">H</span>
+    <span class="todo-title" ng-bind="model.title"></span>
+    <button class="todo-remove clean-btn" ng-click="deleteTodo()">Supprimer</button>
 </li>

@@ -28,11 +28,6 @@ body {
     color: #3D4D58;
 }
 
-#app-container button {
-    color: #0084A5;
-    font-weight: bold;
-}
-
 #dashbord-container {
     padding: 10px 10px 30px 40px;
 }
@@ -55,14 +50,142 @@ body {
     color: #0084A5;
 }
 
-#todo-container #filter-container h3 {
+#todo-container #filter-container h3,
+#todo-container #sort-container h3 {
     text-align: center;
 }
 
-#todo-container #sort-container h3 {
-    text-align: center;
+#todo-container #filter-container button,
+#todo-container #sort-container button,
+#todo-container #todo-panel-container #add-container button {
+    background-color: rgb(39, 150, 190) !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 5px 10px;
+    border: solid #919191 1px;
+    border-radius: 8px;
+}
+
+#todo-container #filter-container button:hover,
+#todo-container #sort-container button:hover,
+#todo-container #todo-panel-container #add-container button:hover {
+    background-color: rgb(56, 165, 190) !important;
 }
 
 #error-container {
     padding: 10px 10px 10px 40px;
 }
+
+#todo-panel-container {
+    width: 800px;
+    margin: 20px 0;
+    color: #0084A5;
+}
+
+#todo-panel-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#todo-panel-container #add-container {
+    margin: 10px 0;
+}
+
+#todo-panel-container #entries-container {
+    padding: 10px;
+    border: solid #b3b3b3 1px;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+    color: #0084A5;
+}
+
+#todo-panel-container #entries-container .entry {
+    margin: 5px 0;
+}
+
+#todo-panel-container #entries-container .todo-id,
+#todo-panel-container #entries-container .todo-priority,
+#todo-panel-container #entries-container .todo-title,
+#todo-panel-container #entries-container .todo-remove {
+    display: inline-block;
+}
+
+#todo-panel-container #entries-container .todo-id {
+    width: 30px;
+}
+
+#todo-panel-container #entries-container .todo-priority {
+    width: 30px;
+}
+
+#todo-panel-container #entries-container .todo-title {
+    width: 635px;
+}
+
+#todo-panel-container #entries-container .todo-remove {
+    width: 70px;
+}
+
+/* buttons */
+
+/* Note: Values in nsNativeTheme IsWidgetStyled function
+   need to match button background/border values here */
+
+button.clean-btn,
+input[type="reset"].clean-btn,
+input[type="button"].clean-btn,
+input[type="submit"].clean-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+}
+
+/* Cancel button style */
+button.clean-btn {
+    white-space: inherit;
+    text-indent: 0;
+    outline: none;
+}
+
+button:hover.clean-btn,
+input[type="reset"]:hover.clean-btn,
+input[type="button"]:hover.clean-btn,
+input[type="submit"]:hover.clean-btn {
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+}
+
+button:active:hover.clean-btn,
+input[type="reset"]:active:hover.clean-btn,
+input[type="button"]:active:hover.clean-btn,
+input[type="submit"]:active:hover.clean-btn {
+    padding: 0;
+    border-style: none;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+}
+
+button[disabled]:active.clean-btn, button[disabled].clean-btn,
+input[type="reset"][disabled]:active.clean-btn,
+input[type="reset"][disabled].clean-btn,
+input[type="button"][disabled]:active.clean-btn,
+input[type="button"][disabled].clean-btn,
+select[disabled] > input[type="button"].clean-btn,
+select[disabled] > input[type="button"]:active.clean-btn,
+input[type="submit"][disabled]:active.clean-btn,
+input[type="submit"][disabled].clean-btn {
+    padding: 0;
+    border: none;
+    color: inherit;
+    cursor: inherit;
+    outline: none;
+}
+
+/* ! Cancel button style */

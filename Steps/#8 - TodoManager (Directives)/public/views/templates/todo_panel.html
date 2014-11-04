@@ -1,3 +1,21 @@
-<ul>
-    <todoentry data-ng-repeat="todo in todoList | filter: filterProperty | orderBy: orderByProperty" model="todo"></todoentry>
-</ul>
+<div id="todo-panel-container">
+    <div id="add-container">
+        <div ng-if="adding === false">
+            <button id="add-btn" class="clean-btn" ng-click="addTodo()">Add a todo</button>
+        </div>
+        <div ng-if="adding === true">
+            <label for="add-title">Description</label>
+            <input id="add-title" type="text" ng-model="newTodo.title"/>
+            <label for="add-priority">Priority</label>
+            <select id="add-priority" data-ng-model="newTodo.priority" ng-options="priority.id as priority.name for priority in priorityList"></select>
+            <button class="clean-btn" ng-click="addTodoCancel()">Cancel</button>
+            <button class="clean-btn" ng-click="addTodoConfirm()">Confirm</button>
+        </div>
+    </div>
+    <div id="entries-container">
+        <ul>
+            <todoentry class="entry" data-ng-repeat="todo in todoList | filter: filterProperty | orderBy: orderByProperty"
+                       model="todo"></todoentry>
+        </ul>
+    </div>
+</div>
