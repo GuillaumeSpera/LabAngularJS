@@ -1,4 +1,4 @@
-Lab-AngularJS-Part-1
+Lab-AngularJS
 ====================
 
-DCube Lab #2 - AngularJS (Part 1)
+DCube Labs - AngularJS
