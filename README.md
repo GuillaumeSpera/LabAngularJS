@@ -1,4 +1,4 @@
 Lab-AngularJS
 ====================
 
-DCube Labs - AngularJS
+Lab - AngularJS
